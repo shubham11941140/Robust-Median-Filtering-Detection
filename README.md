@@ -32,7 +32,7 @@ In rotation invariant LBP, we cycle through all possible rotations of the binary
 
 The rotation invariant LBP operator can be written as:
 
-$$LBP_{P,R}^{ri} = min\{ROR(x, i)\}$$
+$$LBP_{P,R}^{ri} = min \{ROR(x, i) \}$$
 
 where $ROR(x, i)$ is the result of rotating the binary pattern $x$ by $i$ bits to the right.
 
@@ -79,7 +79,62 @@ The center gray level component of $CLBP$ is discard, because it describes the g
 
 Finally, we use the joint $2D$ histogram of the $CLBPS^{riu2}_{P, R}$ and $CLBPM^{riu2}_{P, R}$ codes as our first features set $(JHLBP)$ with $(P + 2)^2$ dimensions for median filtering detection.
 
+### **2. Correlation Coefficients of PDM**
 
+The local pixel differences can better describe how pixel values change and implicitly encode important micro structures. To show the behavior
+of local pixel difference pair, we present the joint probability distribution of local pixel difference pair which is denoted as:
+
+$$P^{p, q}_{i, j}(t_x, t_y) = Pr(g^p_{i, j} - g_{i,j} = t_x, g^q_{i, j} - g_{i,j} = t_y)$$
+
+where $g^p_{i, j}$ and $g^q_{i, j}$ are the pixel values of the $p_{th}$ and $q_{th}$ neighbors of the center pixel $(i, j)$, respectively. $t_x$ and $t_y$ are the local pixel difference pair.
+
+Essentially it is the Probability of $p_{th}$ neighbour differing by a difference of $t_x$ from the center pixel $g_{i,j}$ and $q_{th}$ neighbour differing by a difference of $t_y$ from the center pixel $g_{i,j}$.
+
+In order to take advantage of the correlation between the local pixel difference pair, we compute the correlation coefficients of the PDM. 
+
+#### **PDM (Pixel Difference Matrix):**
+
+First, we obtain a PDV (Pixel Difference Vector) for each pixel in the image. The PDV is a vector of length $P$ which contains the difference between the center pixel and its $P$ neighbours. The PDV is denoted as:
+
+$$d_i = [d_{i,1}, d_{i,2}, ..., d_{i,P}]^T$$
+
+where $d_i$ is the PDV of $i^{th}$ pixel in the image. $d_{i,j}$ is the difference between the center pixel and its $j^{th}$ neighbour.
+
+Now, we eliminate the PDVs whose elements are all $0$ values.
+
+Then, we construct a PDM (Pixel Difference Matrix) for the remaining PDVs. The PDM is denoted as:
+
+$$M = \begin{bmatrix} d_{1,1} & d_{2,1} & \cdots & d_{N,1} \\ d_{1,2} & d_{2,2} & \cdots & d_{N,2} \\ \vdots & \vdots & \ddots & \vdots \\ d_{1,P} & d_{2,P} & \cdots & d_{N,P} \end{bmatrix}$$
+
+where $M$ is the PDM of the image. $N$ is the number of PDVs after eliminating the PDVs whose elements are all $0$ values.
+
+The PDV measures the differences between the center point and neighboring pixels within a patch, thus it can better describe how pixel values change and can implicitly encode important visual patterns such as edges and lines in images.
+
+Now, Joint probability is suitable to elaborate the behavior of local difference pairs. Therefore, the $Normalized$ $Cross$ $Correlation$ $(NCC)$ coefficients can be used as features to capture the joint probability of local difference pairs.
+
+#### **Normalized Cross Correlation (NCC):**
+
+The $NCC$ coefficient of $i^{th}$ and $j^{th}$ rows in the PDM is denoted as:
+
+$$ NCC(i, j) = \dfrac{cov([d_{1, i}, d_{2, i}, ..., d_{N, i}]^T, [d_{1, j}, d_{2, j}, ..., d_{N, j}]^T)}{\sqrt{D([d_{1, i}, d_{2, i}, ..., d_{N, i}]^T)D([d_{1, j}, d_{2, j}, ..., d_{N, j}]^T)}}$$
+
+where $cov$ is the covariance of two vectors and $D$ is defined as:
+
+$$D([d_{1, i}, d_{2, i}, ..., d_{N, i}]^T) = cov([d_{1, i}, d_{2, i}, ..., d_{N, i}]^T, [d_{1, i}, d_{2, i}, ..., d_{N, i}]^T)$$
+
+The $NCC$ coefficient is a measure of similarity between two vectors. It is equal to $1$ when the two vectors are identical, and it is equal to $0$ when the two vectors are orthogonal.
+
+Our second set of features can be summarized as follows:
+1. Group the $PDVs$ to form the $PDM$ with $P$ rows;
+2. Consider an arbitrary row of $PDM$ as a random variable and obtain the $NCC$ coefficients of any different variables;
+3. Concatenate all the $NCC$ coefficients of $PDM$ $(CPDM)$ to yield a $^PC_2-Dimensional$ feature vector $C$.
+
+### **3. Final Features Set**
+
+Combining $JHLBP$ features and $CPDM$ features, we obtain the final $LDD$ features with $(P+2)^2 + \frac{P(P-1)}{2}$ elements for median filtering
+detection.
+
+**NOTE:** As instructed in the research paper, we will use $8$ neighbours i.e. $P = 8$ and $R = 1$ where $P$ is the number of neighbours and $R$ is the radius of the neighbourhood.
 
 ### The requirement for the project are:
 
