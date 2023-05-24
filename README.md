@@ -204,6 +204,26 @@ JHLBP provides better discriminative ability than CPDM which has very low discri
 
 ## Experiments and Results
 
+The $C-SVM$ with $Gaussian$ $Kernel$ is used as the classifier in our experiments. Using the **five-fold cross-validation** in conjunction with a grid search, we obtain the best kernel parameters for the $SVM$. The grid search for the optimal parameters are performed on the multiplicative grid $(C, \gamma) \in \{ (2^i, 2^j) | i, j \in Z \}$.
+
+We use those optimal parameters to get the classifier model on the entire training set, and the trained classifier model is used to perform a classification on the testing set.
+
+Specifically, the images in the $UCID$ database are randomly divided into four folds of nearly equal size. The training set is composed of three folds, while the remaining fold is used for evaluation.
+
+The performance of each detection method is summarized by the minimal average decision error of each technique under the assumption of equal priors and equal costs, 
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/4450ca92-22f6-418e-bb78-b71dc5255690)
 
 
+where $P_{fp}$ and $P_{tp}$ denote the false positive and true positive rates, respectively.
+
+### C-SVM with Gaussian Kernel
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/f0bae6dc-14c2-4685-afea-e74850453ebb)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/cd944e24-2b2d-41eb-9ddd-667bc70945aa)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/13f10d98-580e-40ab-bfc6-d20cc501ac86)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/3576e7a6-8486-4d3a-83cc-a26997cf5a3d)
 
