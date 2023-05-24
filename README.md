@@ -162,3 +162,48 @@ We have submitted a single IPYNB file containing all the code for the project. T
 You just need to run the cells in the notebook in a sequential manner and the code will run.
 
 The code can be run on Visual Studio Code or Jupyter Notebook or Google Colab or any other platform that supports IPYNB files as per your convenience.
+
+## Implementation Steps:
+
+### Construction of datasets to create median and average filtered images with 3 $\times$ 3 and 5 $\times$ 5 kernels
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/bf0b4804-41b5-4596-bdef-b58bdc14003c)
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/3000bbf5-ac29-4986-8802-5b0000a88fee)
+
+### Implementing LDD (Local Difference Descriptor) Features
+
+### Correlation Coefficients of PDM
+
+### Reconstruction of Uniform Rotational Invariant Histogram
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/2a5f037b-17ae-4afe-96fe-dad8c8ba3c04)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/576933b9-69e4-44af-8689-d023d26778e1)
+
+### Creation of the LDD Feature Set
+
+### Reconstruction of 2D Projection of proposed features by using Linear Discriminant Analysis (LDA) corresponding to JHLBP, CPDM, LDD Features
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/a823f139-5f88-485d-abc0-28cf9a9d703a)
+
+$Blue$ refers to Unaltered Images
+
+$Red$ refers to Images with Median filtering applied with a kernel size 3x3
+
+$Yellow$ refers to Images with Median filtering applied with a kernel size 5x5
+
+$Green$ refers to Images with Average filtering applied with a kernel size 3x3
+
+The Discriminative ability is shown via Clustering Effect.
+
+We see the same pattern as shown in the research paper i.e. LDD provides better discriminative ability than the other two methods.
+
+JHLBP provides better discriminative ability than CPDM which has very low discriminative ability.
+
+**NOTE:** We see MF3 and MF5 are a bit merged, but the median filtering as a whole is separated than the original images and the average filtered images.
+
+## Experiments and Results
+
+
+
+
