@@ -293,6 +293,25 @@ where $P_{fp}$ and $P_{tp}$ denote the false positive and true positive rates, r
 
 ### Finding $P_e$:
 
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/9442890d-bf63-4ae6-be56-4152bec97a25)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/d53c2838-a628-4c9c-af1b-57d67607a7e0)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/bd13d754-bf9f-4e40-9940-2ad3494db8e2)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/4f46f7f9-24dd-45d9-be86-b28bdcaa674d)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/48ab5540-b89d-4835-8fe3-bba2cd4d2c59)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/c0f87c48-c090-4841-9c49-57ef0bb8cf46)
+
+#### Displaying Results of $P_e$ in a Tabular Form
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/2e437b82-e8a2-42ed-875f-4661316db725)
+
+## Conclusion
+
+As a conclusion, we see that $CPDM$ in its own are not the best features but when combined with $LBP$ features, they compliment them beautifully and create a new feature set i.e. $LDD$ feature set which has the best discriminative ability amongst all the $3$ feature sets discussed in this report.
 
 
 
