@@ -227,3 +227,75 @@ where $P_{fp}$ and $P_{tp}$ denote the false positive and true positive rates, r
 
 ![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/3576e7a6-8486-4d3a-83cc-a26997cf5a3d)
 
+### Optimal Parameter Training
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/4eed34b1-4583-46ee-b9a2-cde7025295e0)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/ce4d9fc6-2d8c-422f-b148-d0a3d3890bb4)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/b13af239-408c-4ddd-b4fe-020b71cc9621)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/d5f22fd6-f94b-46a3-be13-3c9def968e7d)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/0e4eaaec-1b88-47ce-94b2-dcc818293697)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/49d663b1-cce3-4f64-8913-61566d6139b5)
+
+### Classification Reports
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/0f8a46fb-1e27-42b9-9b28-1ca27aba3bfb)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/d86070f2-9c0c-4ab1-b0cc-778399a895b6)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/d95cd022-a2c9-463a-b2be-3a121de3766d)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/3e2c5781-0072-4fad-b78d-8ed110972425)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/7337ca6d-e4b5-47f4-a5a5-7a1591b67706)
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/b1dabd4f-5abf-47c5-9f6c-6b1dbd5d5303)
+
+## From the above Classification Reports we can see that LDD features are the best, followed by JHLBP and then CPDM.
+
+### Plotting ROC Curve
+
+**Below Curve is based on Model Trained on Custom Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/8c2bb6be-5b46-409a-aa76-11f091aa01d2)
+
+**Below Curve is based on Model Trained on Original Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/5a398e9f-292b-43d4-9ccd-16283fa48a34)
+
+**Below Curve is based on Model Trained on Custom Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/39ab49ff-da3e-4b85-a66a-4fe4d5ab50f1)
+
+**Below Curve is based on Model Trained on Original Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/d3b39639-daa0-4931-9dcb-2135c31f6a6a)
+
+**Below Curve is based on Model Trained on Custom Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/0af913ae-d4f4-4dca-b43e-14564dbe3f90)
+
+**Below Curve is based on Model Trained on Original Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/aea39328-3717-46a6-bb62-de68710b4c6f)
+
+**Below Curve is based on Model Trained on Custom Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/fbb42c51-1657-43d0-9758-882a94b5d3b4)
+
+**Below Curve is based on Model Trained on Original Parameters**
+
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/2a00ee20-e98f-4955-9d03-891ccd8b1a95)
+
+### Finding $P_e$:
+
+
+
+
+
+
+
