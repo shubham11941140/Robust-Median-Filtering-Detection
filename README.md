@@ -4,11 +4,17 @@ It involves the complete implementation of research paper on Robust Median Filte
 ### The requirement for the project are:
 
 Numpy (1.19.2)
+
 cv2 (4.5.1)
+
 matplotlib (3.3.2)
+
 threading (3.9.1)
+
 scikit-learn (0.24.1)
+
 pickle (4.0)
+
 pandas (1.2.1)
 
 Ensure that the UCID Dataset is provided for generation of the mean/median filtered dataset and running of code.
