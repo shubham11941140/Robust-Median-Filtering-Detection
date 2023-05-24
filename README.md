@@ -32,7 +32,8 @@ In rotation invariant LBP, we cycle through all possible rotations of the binary
 
 The rotation invariant LBP operator can be written as:
 
-$$LBP_{P,R}^{ri} = min \{ROR(x, i) \}$$
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/1721da1d-a23b-45d0-b84c-12425bd185c0)
+
 
 where $ROR(x, i)$ is the result of rotating the binary pattern $x$ by $i$ bits to the right.
 
@@ -48,7 +49,7 @@ In the paper, they have talked about rotation invariant uniform LBP because it i
 
 The rotation invariant uniform LBP operator can be written as:
 
-$$LBP_{P,R}^{riu2} = \begin{cases} \sum_{p=0}^{P-1} s(g_p - g_c)2^p & \text{if } U(LBP_{P, R}) \leq 2 \\ P+1 & otherwise \end{cases}$$
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/30770fb4-3121-4c06-a9f9-f6c6eb095288)
 
 where $U(x)$ is the number of bitwise transitions in the binary pattern $x$.
 
@@ -70,21 +71,20 @@ where $c$ denotes the mean value of $m_p$ in the whole image.
 
 Hence, we get:
 
-$$CLBPS_{P,R}^{riu2} = \begin{cases} \sum_{p=0}^{P-1} s(g_p - g_c)2^p & \text{if } U(LBP_{P, R}) \leq 2 \\ P+1 & otherwise \end{cases}$$
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/4803ece4-6b5f-464a-9a65-20269087d582)
 
-$$CLBPM_{P,R}^{riu2} = \begin{cases} \sum_{p=0}^{P-1} s(m_p - c)2^p & \text{if } U(LBP_{P, R}) \leq 2 \\ P+1 & otherwise \end{cases}$$
 
 **Note: The Outputs will be converted to Rotation Invariant Form.**
-The center gray level component of $CLBP$ is discard, because it describes the global information of an image. The histogram of the $CLBPC$ cannot distinguish the median filtered images from non-median filtered images. The mappings from $LBP_{P,R}$ to $CLBPS^{riu2}_{P, R}$ and $CLBPM^{riu2}_{P, R}$, which have $P + 2$ distinct output values, can be implemented with a lookup table of $2^P$ elements. 
 
-Finally, we use the joint $2D$ histogram of the $CLBPS^{riu2}_{P, R}$ and $CLBPM^{riu2}_{P, R}$ codes as our first features set $(JHLBP)$ with $(P + 2)^2$ dimensions for median filtering detection.
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/0d3ff3e7-4d3d-4c53-8426-1f477f1c6657)
 
 ### **2. Correlation Coefficients of PDM**
 
 The local pixel differences can better describe how pixel values change and implicitly encode important micro structures. To show the behavior
 of local pixel difference pair, we present the joint probability distribution of local pixel difference pair which is denoted as:
 
-$$P^{p, q}_{i, j}(t_x, t_y) = Pr(g^p_{i, j} - g_{i,j} = t_x, g^q_{i, j} - g_{i,j} = t_y)$$
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/fcbf5b62-8933-4944-b066-288923bfe76d)
+
 
 where $g^p_{i, j}$ and $g^q_{i, j}$ are the pixel values of the $p_{th}$ and $q_{th}$ neighbors of the center pixel $(i, j)$, respectively. $t_x$ and $t_y$ are the local pixel difference pair.
 
@@ -104,7 +104,8 @@ Now, we eliminate the PDVs whose elements are all $0$ values.
 
 Then, we construct a PDM (Pixel Difference Matrix) for the remaining PDVs. The PDM is denoted as:
 
-$$M = \begin{bmatrix} d_{1,1} & d_{2,1} & \cdots & d_{N,1} \\ d_{1,2} & d_{2,2} & \cdots & d_{N,2} \\ \vdots & \vdots & \ddots & \vdots \\ d_{1,P} & d_{2,P} & \cdots & d_{N,P} \end{bmatrix}$$
+![image](https://github.com/shubham11941140/Robust-Median-Filtering-Detection/assets/63910248/e2cff4ac-925a-46b6-95d3-b3a7e368c71e)
+
 
 where $M$ is the PDM of the image. $N$ is the number of PDVs after eliminating the PDVs whose elements are all $0$ values.
 
